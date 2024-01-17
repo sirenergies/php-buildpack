@@ -293,8 +293,8 @@ status "Bundling platform default extensions"
 echo "       apcu"
 fetch_package "$PHP_BASE_URL" "ext/$(php_api_version)/php-apcu" "/app/vendor/php" | indent
 
-echo "       phpredis"
-fetch_package "$PHP_BASE_URL" "ext/$(php_api_version)/php-redis" "/app/vendor/php" | indent
+#echo "       phpredis"
+#fetch_package "$PHP_BASE_URL" "ext/$(php_api_version)/php-redis" "/app/vendor/php" | indent
 
 echo "       mongodb"
 fetch_package "$PHP_BASE_URL" "ext/$(php_api_version)/php-mongodb" "/app/vendor/php" | indent
