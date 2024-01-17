@@ -122,9 +122,9 @@ function install_composer_deps() {
             fi
 
             local extension_package_path="ext/$(php_api_version)/php-${ext}"
-#            package_found="$(has_package "${PHP_BASE_URL}" "${extension_package_path}")"
-            package_found="false"
-            if [ "${package_found}" = "true" ] ; then
+            package_found="$(has_package "${PHP_BASE_URL}" "${extension_package_path}")"
+
+            if [[ "${package_found}" = "true" && ! "${ext}" =~ "redis" ]] ; then
               echo "Installing PHP extension: ${ext}" | indent
               fetch_package "${PHP_BASE_URL}" "${extension_package_path}" "/app/vendor/php"
             else
